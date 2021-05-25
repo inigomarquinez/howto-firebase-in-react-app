@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Example express server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inigomarquinez/howto-firebase-in-react-app.git"
+  },
+  "keywords": [
+    "firebase"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inigomarquinez/howto-firebase-in-react-app/issues"
+  },
+  "homepage": "https://github.com/inigomarquinez/howto-firebase-in-react-app#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}

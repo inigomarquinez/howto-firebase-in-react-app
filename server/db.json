@@ -1,0 +1,10 @@
+{
+  "users": [
+    { "id": 1, "name": "User 1" }
+  ],
+  "user_2_token": [
+    { "userId": 1, "token": "token A" },
+    { "userId": 1, "token": "token B" },
+    { "userId": 2, "token": "token C" }
+  ]
+}

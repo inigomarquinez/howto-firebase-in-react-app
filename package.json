@@ -1,0 +1,39 @@
+{
+  "name": "howto-firebase-in-react-app",
+  "version": "1.0.0",
+  "description": "Example of how to integrate Firebase in a React app connected to a express server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inigomarquinez/howto-firebase-in-react-app.git"
+  },
+  "keywords": [
+    "firebase"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inigomarquinez/howto-firebase-in-react-app/issues"
+  },
+  "homepage": "https://github.com/inigomarquinez/howto-firebase-in-react-app#readme",
+  "contributors": [
+    {
+      "name": "Íñigo Marquínez Prado",
+      "email": "inigo.marquinez@guidesmiths.com"
+    },
+    {
+      "name": "Jose Manuel Torralvo",
+      "email": "jm.torralvo@guidesmiths.com"
+    },
+    {
+      "name": "Gabriel Pfeffer López",
+      "email": "gabriel.pfeffer@guidesmiths.com"
+    },
+    {
+      "name": "Raquel Fernández",
+      "email": "raquel.fernandez@guidesmiths.com"
+    },
+    {
+      "name": "Ignacio Mangas",
+      "email": "ignacio.mangas@guidesmiths.com"
+    }
+  ]
+}
