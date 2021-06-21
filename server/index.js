@@ -1,13 +1,19 @@
-const jsonServer = require('json-server');
+process.env.SERVICE_ENV = process.env.SERVICE_ENV || 'local';
 
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
+const runner = require('systemic-domain-runner');
+const bunyan = require('bunyan');
+const system = require('./system');
+const { name } = require('./package.json');
 
-const PORT = 3000;
+const emergencyLogger = process.env.SERVICE_ENV === 'local' ? console : bunyan.createLogger({ name });
 
-server.use(middlewares);
-server.use(router);
-server.listen(PORT, () => {
-  console.log(`JSON Server is running at port ${PORT}`)
+const die = (message, err) => {
+	emergencyLogger.error(err, message);
+	process.exit(1);
+};
+
+runner(system(), { logger: emergencyLogger }).start((err, components) => {
+	if (err) die('Error starting system', err);
+	const { logger, pkg } = components;
+	logger.info(`${pkg.name} has started`);
 });
