@@ -17,6 +17,11 @@ module.exports = {
 			},
 		},
 	},
+	firebase: {
+		privateKey: '<private_key>',
+		serviceAccount: '<service_account>',
+		databaseURL: '<database_url>',
+	},
 	logger: {
 		transport: 'console',
 		include: [
