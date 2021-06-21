@@ -40,11 +40,11 @@
   },
   "dependencies": {
     "@hapi/boom": "^9.1.0",
-    "body-parser": "^1.19.0",
     "bunyan": "^1.8.12",
     "chalk": "^4.0.0",
     "confabulous": "^1.7.0",
     "debug": "^4.1.1",
+    "express": "^4.17.1",
     "firebase-admin": "^9.9.0",
     "helmet": "^4.1.1",
     "hogan.js": "^3.0.2",

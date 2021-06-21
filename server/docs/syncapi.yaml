@@ -28,12 +28,39 @@ paths:
                   - $ref: '#/components/schemas/EmptyManifest'
                   - $ref: '#/components/schemas/Manifest'
         default:
-          description: unexpected error
+          description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-
+  /registerDevice:
+    post:
+      tags:
+        - firebase
+      description: Registers a new user's device
+      responses:
+        '200':
+          description: User device registered
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /sendMessage:
+    post:
+      tags:
+        - firebase
+      description: Sends a message to all the registered devices
+      responses:
+        '200':
+          description: Message broadcasted
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
 components:
   schemas:
