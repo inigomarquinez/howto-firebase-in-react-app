@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useCallback } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const registerDevice = useCallback(() => {
+    fetch('http://localhost:4000/registerDevice', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) // body data type must match "Content-Type" header
+    });
+    console.log('registerDevice');
+  }, []);
+
+  const sendNotification = useCallback(() => {
+    fetch('http://localhost:4000/sendMessage', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) // body data type must match "Content-Type" header
+    });
+    console.log('sendNotification');
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  <div className="App">
+    <button onClick={registerDevice}>
+      Register my device
+    </button>
+    <button onClick={sendNotification}>
+      Send me a notification
+    </button>
+  </div>
+);
+  }
 
 export default App;
