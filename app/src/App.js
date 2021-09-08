@@ -2,26 +2,26 @@ import React, { useCallback } from 'react';
 import './App.css';
 
 const App = () => {
-  const registerDevice = useCallback(() => {
-    fetch('http://localhost:4000/registerDevice', {
+  const registerDevice = useCallback(async () => {
+    const payload = { deviceId: 'abc' };
+    await fetch('http://localhost:4000/registerDevice', {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({}) // body data type must match "Content-Type" header
+      body: JSON.stringify(payload)
     });
     console.log('registerDevice');
   }, []);
 
-  const sendNotification = useCallback(() => {
-    fetch('http://localhost:4000/sendMessage', {
+  const sendNotification = useCallback(async () => {
+    const payload = { deviceId: 'abc' }
+    await fetch('http://localhost:4000/sendMessage', {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({}) // body data type must match "Content-Type" header
+      body: JSON.stringify(payload)
     });
     console.log('sendNotification');
   }, []);
