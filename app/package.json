@@ -2,6 +2,28 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "contributors": [
+    {
+      "name": "Íñigo Marquínez Prado",
+      "email": "inigo.marquinez@dcsl.com"
+    },
+    {
+      "name": "Jose Manuel Torralvo",
+      "email": "jm.torralvo@dcsl.com"
+    },
+    {
+      "name": "Gabriel Pfeffer López",
+      "email": "gabriel.pfeffer@dcsl.com"
+    },
+    {
+      "name": "Raquel Fernández",
+      "email": "raquel.fernandez@dcsl.com"
+    },
+    {
+      "name": "Ignacio Mangas",
+      "email": "ignacio.mangas@dcsl.com"
+    }
+  ],
   "dependencies": {
     "firebase": "^9.0.1",
     "ngrok": "^4.2.2",

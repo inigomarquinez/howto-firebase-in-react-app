@@ -7,7 +7,7 @@ module.exports = new System({ name: 'routes' })
 	.add('routes.admin', adminRoutes())
 	.dependsOn('config', 'app', 'manifest')
 	.add('routes.firebase', firebaseRoutes())
-	.dependsOn('app', 'store', 'logger')
+	.dependsOn('app', 'store', 'logger', 'firebase')
 	.add('routes')
 	.dependsOn(
 		{

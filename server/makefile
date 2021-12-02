@@ -1,5 +1,3 @@
-
-
 ensure-dependencies:
 	@echo "Ensuring docker is installed..."
 	@docker info

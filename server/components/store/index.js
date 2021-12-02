@@ -4,6 +4,7 @@ const userStore = require('./user-store');
 
 module.exports = new System({ name: 'store' })
 	.add('store.user', userStore())
+	.dependsOn('logger')
 	.add('store')
 	.dependsOn(
 		{

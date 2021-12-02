@@ -1,10 +1,14 @@
 const devices = [];
 
 module.exports = () => {
-	const start = async () => {
+	const start = async ({ logger }) => {
 		const saveUserDevice = async deviceId => {
-			devices.push(deviceId);
-			console.log('devices :>> ', devices);
+			if (devices.find(d => d === deviceId) === undefined) {
+				logger.info(`Adding device ${deviceId}`);
+				devices.push(deviceId);
+			} else {
+				logger.warn('This device has already been added');
+			}
 		};
 
 		return {

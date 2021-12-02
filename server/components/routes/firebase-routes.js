@@ -1,20 +1,28 @@
+const { StatusCodes } = require('http-status-codes');
+
 module.exports = () => {
-	const start = async ({ app, store, logger }) => {
+	const start = async ({
+		app, store, logger, firebase,
+	}) => {
 		app.post('/registerDevice', async (req, res) => {
 			try {
 				const { body: { deviceId } } = req;
 				await store.user.saveUserDevice(deviceId);
-				res.sendStatus(200);
+				res.sendStatus(StatusCodes.OK);
 			} catch (error) {
 				logger.error(error);
-				res.sendStatus(500);
+				res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
 			}
 		});
 
-		app.post('/sendMessage', (_req, res) => {
+		app.post('/sendMessage', (req, res) => {
 			try {
-				console.log('sendMessage');
-				res.sendStatus(200);
+				if (req.body.deviceId) {
+					firebase.sendMessage(req.body.deviceId);
+					res.sendStatus(StatusCodes.OK);
+				} else {
+					res.sendStatus(StatusCodes.BAD_REQUEST);
+				}
 			} catch (error) {
 				logger.error(error);
 				res.sendStatus(500);
